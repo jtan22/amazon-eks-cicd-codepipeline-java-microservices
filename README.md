@@ -31,6 +31,8 @@ Product microservice is internet facing and is exposed using Ingress controller.
 ### EKS Cluster
 Create Amazon EKS Cluster with 3 Compute nodes with instance type t3.small or larger
 
+eksctl create cluster --name demo --region ap-southeast-2 --nodegroup-name demo-workers --node-type t3.medium --nodes 3 --nodes-min 1 --nodes-max 4 --managed
+
 ### Amazon ECR
 Create private Amazon ECR Repositories for Docker images for two microservices
 - Product
