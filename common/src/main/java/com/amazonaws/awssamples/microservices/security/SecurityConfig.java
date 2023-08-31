@@ -9,8 +9,8 @@ import org.springframework.security.web.SecurityFilterChain;
 /**
  * Spring boot security config.
  */
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true) // To configure method-level security
+// @EnableWebSecurity
+// @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true) // To configure method-level security
 public class SecurityConfig {
 
     @Bean
