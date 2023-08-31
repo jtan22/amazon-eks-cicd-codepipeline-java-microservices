@@ -21,7 +21,6 @@ import java.util.Map;
  * Product Service API
  */
 @RestController
-@RequestMapping(value="/service/product")
 public class ProductService {
 
     @Autowired
@@ -40,13 +39,18 @@ public class ProductService {
         this.productMap.put(4L, new Product(4, "Book4444", ""));
     }
 
+    @RequestMapping(value="/",method = RequestMethod.GET)
+    public String home(){
+        return "Alive";
+    }
+
     /**
      * Simply return the Product object with no review
      *
      * @param id
      * @return
      */
-    @RequestMapping(value="/v1/{id}",method = RequestMethod.GET)
+    @RequestMapping(value="/service/product/v1/{id}",method = RequestMethod.GET)
     public Product getProduct(@PathVariable Long id){
         return productMap.get(id);
     }
@@ -57,7 +61,7 @@ public class ProductService {
      * @param id
      * @return
      */
-    @RequestMapping(value="/v2/{id}",method = RequestMethod.GET)
+    @RequestMapping(value="/service/product/v2/{id}",method = RequestMethod.GET)
     public Product getProductWithReview(@PathVariable Long id){
         Product product = productMap.get(id);
 //        restTemplate.getInterceptors().add((request, body, execution) -> {
